@@ -62,11 +62,18 @@ env = Environment( CPPPATH = sch.cppPath(mu2eOpts),   # $ART_INC ...
                    LIBPATH = sch.libPath(mu2eOpts),   # /lib, $ART_LIB ...
                    ENV = sch.exportedOSEnvironment(), # LD_LIBRARY_PATH, ROOTSYS, ...
                    FORTRAN = 'gfortran',
-                   BABARLIBS = sch.BaBarLibs(),
                    CXXCOMSTR = cccomstr,
                    SHCXXCOMSTR = cccomstr,
                    LINKCOMSTR = linkcomstr,
                    SHLINKCOMSTR= linkcomstr,
+                   ROOTLIBS = sch.rootLibs(),
+                   BABARLIBS = sch.BaBarLibs(),
+                   MU2EBASE = mu2eOpts["base"],
+                   BINDIR = mu2eOpts['bindir'],
+                   BUILD = mu2eOpts["build"],
+                   G4VIS = mu2eOpts["g4vis"],
+                   G4VG = mu2eOpts["g4vg"],
+                   G4MT = mu2eOpts["g4mt"],
                    # so we can find compilation_db from a satellite build
                    toolpath=[os.path.join(os.environ['MU2E_BASE_RELEASE'],'site_scons/site_tools')]
 )
@@ -93,16 +100,6 @@ env.Append(BUILDERS = {'GenericBuild' : generic})
 SetOption('warn', 'no-fortran-cxx-mix')
 env.MergeFlags( sch.mergeFlags(mu2eOpts) )
 # env.MergeFlags( '-lpthread' )
-
-# env construction variables, in SConscript: var=env['VARNAME']
-env.Append( ROOTLIBS = sch.rootLibs() )
-env.Append( BABARLIBS = sch.BaBarLibs() )
-env.Append( MU2EBASE = mu2eOpts["base"] )
-env.Append( BINDIR = mu2eOpts['bindir'] )
-env.Append( BUILD = mu2eOpts["build"] )
-env.Append( G4VIS = mu2eOpts["g4vis"] )
-env.Append( G4VG = mu2eOpts["g4vg"] )
-env.Append( G4MT = mu2eOpts["g4mt"] )
 
 # make the scons environment visible to all SConscript files (Import('env'))
 Export('env')
