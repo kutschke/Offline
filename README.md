@@ -3,11 +3,16 @@
 This is the HEAD of my fork of Offline.
 
 I don't have a master branch in this clone because it should never be
-used for anything and it's possible to accidentally use it.
+used for anything and it's possible to accidentally use it.  Always
+start new Mu2e projects by branching from the master branch of
+git@github.com:mu2e/Offline .
 
-You are welcome to use other branches.
+Other branches are working branches.  Some are destined for pull requests
+back to the Mu2e Offline repository and some are dead end working branches.
 
 Here is what I did.
+
+Fork the Mu2e Offline repo.
 
 Make a new branch named dummy starting from the oldest commit in the repo.
 <pre>
