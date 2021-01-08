@@ -10,17 +10,18 @@ https://github.com/Mu2e/Offline
 
 Other branches are working branches.  Some are destined for pull requests
 back to the Mu2e Offline repository and some are dead end working branches.
+At any time some might be in a non-working state.  You are welcome to use any of them.
 
 Here is what I did.
 
-Fork the Mu2e Offline repo.  And clone the fork.
+Fork the Mu2e Offline repo; clone the fork.
 
-Make a new branch named dummy starting from the oldest commit in the repo.
+In the clone, make a new branch named "dummy" starting from the oldest commit in the repo.
 <pre>
  git checkout -b dummy 592ddf8c0b2e94920
-</pre?
+</pre>
 
-Add README.md (this file) to tell the story.
+Create README.md (this file) to tell the story.
 
 <pre>
  git add README.md
