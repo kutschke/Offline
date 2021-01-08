@@ -4,8 +4,8 @@ This is the HEAD branch of my fork of Mu2e Offline https://github.com/Mu2e/Offli
 
 I have removed the master branch from this fork because it should never be
 used for anything and it's possible to accidentally use it.  Always
-start new Mu2e projects by branching from the master branch of
-https://github.com/Mu2e/Offline
+start new Mu2e projects by branching from the appropriate branch, usually master, of
+https://github.com/Mu2e/Offline .
 
 
 Other branches are working branches.  Some are destined for pull requests
