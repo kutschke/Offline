@@ -2,9 +2,9 @@
 
 This is the HEAD branch of my fork of Mu2e Offline https://github.com/Mu2e/Offline .
 
-I have removed the master branch from this fork because it should never be
+I have removed the main branch (formerly master) from this fork because it should never be
 used for anything and it's possible to accidentally use it.  Always
-start new Mu2e projects by branching from the appropriate branch, usually master, of
+start new Mu2e projects by branching from the appropriate branch, usually main, of
 https://github.com/Mu2e/Offline .
 
 
@@ -43,7 +43,7 @@ Push this branch back to the GitHub fork:
  git push origin dummy
 </pre>
 
-On my GitHub account, use the GUI to make dummy the default branch and delete master.
+On my GitHub account, use the GUI to make dummy the default branch and delete main.
 
 
 
