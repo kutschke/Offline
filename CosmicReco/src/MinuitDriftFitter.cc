@@ -89,7 +89,7 @@ FitResult DoFit(int const& _diag, CosmicTrackSeed& tseed, StrawResponse const& s
   // Define Minimization method as "MIGRAD" (see minuit documentation)
   ROOT::Minuit2::FunctionMinimum min = migrad(maxfcn, tolerance);
   if (_diag > 1) {
-    ROOT::Minuit2::MnPrint::SetLevel(3);
+    // ROOT::Minuit2::MnPrint::SetLevel(3); // Fixme - temporary for art v3.10 migration
     ROOT::Minuit2::operator<<(cout, min);
   }
 
@@ -233,10 +233,10 @@ void DoDriftTimeFit(
   // Define Minimization method as "MIGRAD" (see minuit documentation)
   ROOT::Minuit2::FunctionMinimum min = migrad(0, mntolerance);
   if (diag > 1) {
-    ROOT::Minuit2::MnPrint::SetLevel(3);
+    //ROOT::Minuit2::MnPrint::SetLevel(3); // Fixme - temporary for art v3.10 migration
     ROOT::Minuit2::operator<<(cout, min);
   } else {
-    ROOT::Minuit2::MnPrint::SetLevel(0);
+    //ROOT::Minuit2::MnPrint::SetLevel(0);  // Fixme - temporary for art v3.10 migration
   }
 
   // Will be the results of the fit routine:
