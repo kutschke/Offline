@@ -18,18 +18,23 @@
 namespace mu2e {
 
   EventWeightHelper::EventWeightHelper(const fhicl::ParameterSet& pset,
-                                       art::TFileDirectory topdir,
+                                       art::TFileDirectory& topdir,
                                        const std::string& subdir)
     : inputs_{pset.is_empty() ? InputTags() : pset.get<InputTags>("inputs")}
     , weight_{-1.}
     , hfinal_{nullptr}
   {
     if(!pset.is_empty()) {
-      art::TFileDirectory tfdir = subdir.empty() ? topdir : topdir.mkdir(subdir.c_str());
       const int nbins = pset.get<unsigned>("hist.nbins", 100);
       const int xmin = pset.get<unsigned>("hist.xmin", 0.);
       const int xmax = pset.get<unsigned>("hist.xmax", 2.);
-      hfinal_ = tfdir.make<TH1D>("finalWeight", "Final event weight", nbins, xmin, xmax);
+      if ( subdir.empty() ){
+        hfinal_ = topdir.make<TH1D>("finalWeight", "Final event weight", nbins, xmin, xmax);
+      }else{
+        art::TFileDirectory&& tfdir{topdir.mkdir(subdir.c_str())};
+        hfinal_ = tfdir.make<TH1D>("finalWeight", "Final event weight", nbins, xmin, xmax);
+      }
+
     }
   }
 

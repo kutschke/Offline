@@ -33,7 +33,7 @@ namespace mu2e {
 
     // histograms will be placed in topdir/subdir
     EventWeightHelper(const fhicl::ParameterSet& pset,
-                      art::TFileDirectory topdir,
+                      art::TFileDirectory& topdir,
                       const std::string& subdir);
 
   private:
