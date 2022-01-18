@@ -88,7 +88,7 @@ namespace mu2e {
     // output data products
     std::unique_ptr<StatusG4> statG4{nullptr};
     std::unique_ptr<SimParticleCollection> simPartCollection = nullptr;
-    std::unique_ptr<StepPointMCCollection> tvd_collection;
+    std::unique_ptr<StepPointMCCollection> tvd_collection = nullptr;
     std::unique_ptr<MCTrajectoryCollection> mcTrajectories = nullptr;
     std::unique_ptr<SimParticleRemapping> simRemapping = nullptr;
     std::unique_ptr<ExtMonFNALSimHitCollection> extMonFNALHits = nullptr;
