@@ -64,23 +64,6 @@ void mu2e::TestKalRepProvenanceHelpers::analyze(const art::Event& event) {
          << endl;
   }
 
-  // Test the ptr level helpers.
-  auto ptrs = event.getValidHandle<KalRepPtrCollection>(_tracksTag);
-  cout << "KalRep ptrs: " << ptrs->size() << endl;
-  for ( auto const& ptr : *ptrs ){
-    KalRepCollectionInfo info( ptr, event);
-    TrackPatRecType type = decodeTrackPatRecType( ptr, event);
-    cout << "    : "
-         << _tracksTag.label()       << " "
-         << ptr                      << " "
-         << info.patRecType()        << " "
-         << type                     << " | "
-         << info.instanceName()      << " "
-         << info.direction().name()  << " "
-         << info.particleType()      << " "
-         << info.charge()
-         << endl;
-  }
 
 } // end analyze
 
