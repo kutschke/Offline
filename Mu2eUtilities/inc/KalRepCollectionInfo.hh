@@ -32,8 +32,6 @@ namespace mu2e {
   public:
     KalRepCollectionInfo( art::Handle<KalRepCollection> const&      handle );
     KalRepCollectionInfo( art::ValidHandle<KalRepCollection> const& handle );
-    KalRepCollectionInfo( KalRepPtr const& ptr, art::Event const& event );
-    KalRepCollectionInfo( art::ProductID const& id,    art::Event const& event );
 
     TrackPatRecType               patRecType()   const { return patRecType_; }
     TrkFitDirection               direction()    const { return instance_.direction();    }
