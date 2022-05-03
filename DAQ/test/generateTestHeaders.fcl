@@ -1,0 +1,39 @@
+# Create a file with test run/subrun/event headers
+#
+# Usage: mu2e -c Offline/DAQ/test/generateTestHeaders.fcl 
+#
+# Contact person Rob Kutschke
+
+#include "Offline/fcl/messageService.fcl"
+
+
+process_name : generateTestHeaders
+
+
+services : {
+  message : @local::mf_errorsOnly
+}
+
+# Generate 15 events in 5 subruns in 2 runs
+source : {
+  module_type : EmptyEvent
+  maxEvents            : 15
+  numberEventsInRun    :  9
+  numberEventsInSubRun :  3
+}
+
+physics : {
+
+  producers : {
+     generateHeaders :  { module_type : HeaderTestProducer }
+  }
+  
+  t1 : [ generateHeaders  ] 
+  e1 : [ output ]
+
+  trigger_paths  : [t1]
+  end_paths      : [e1]
+
+}
+
+outputs : { output : { module_type : RootOutput fileName : "headerTest.art"  } }

@@ -1,0 +1,29 @@
+# Read a file with test run/subrun/event headers
+#
+# Usage: mu2e -c Offline/DAQ/test/analyzeTestHeaders.fcl 
+#
+# Contact person Rob Kutschke
+
+#include "Offline/fcl/messageService.fcl"
+
+process_name : analyzeTestHeaders
+
+services : { message : @local::mf_errorsOnly }
+
+# Generate 15 events in 5 subruns in 2 runs
+source : {
+  module_type : RootInput
+  fileNames : [ "headerTest.art" ]
+}
+
+physics : {
+
+  analyzers : {
+     readHeaders :  { module_type : HeaderTestAnalyzer }
+  }
+  
+  e1 : [ readHeaders ]
+
+  end_paths : [e1]
+
+}

@@ -89,6 +89,7 @@ helper.make_plugins( [ mainlib,
                                   # See the Fixme at the top of the file.
                        'DTCInterface',
                        'mu2e-artdaq-core_Overlays',
+                       'mu2e-artdaq-core_Data',
                        'artdaq-core_Data'
                      ]
                      )
