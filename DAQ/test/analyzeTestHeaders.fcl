@@ -1,6 +1,6 @@
 # Read a file with test run/subrun/event headers
 #
-# Usage: mu2e -c Offline/DAQ/test/analyzeTestHeaders.fcl 
+# Usage: mu2e -c Offline/DAQ/test/analyzeTestHeaders.fcl
 #
 # Contact person Rob Kutschke
 
@@ -21,7 +21,7 @@ physics : {
   analyzers : {
      readHeaders :  { module_type : HeaderTestAnalyzer }
   }
-  
+
   e1 : [ readHeaders ]
 
   end_paths : [e1]

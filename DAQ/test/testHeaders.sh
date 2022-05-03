@@ -19,7 +19,7 @@ mu2e -c Offline/DAQ/test/analyzeTestHeaders.fcl | grep Mark > mark.2
 echo "read job status:     " $?
 echo " "
 
-echo "Check sizes of output files: " 
+echo "Check sizes of output files: "
 wc mark.1 mark.2
 
 echo "Diff the two files: "
@@ -33,4 +33,3 @@ if [[ "$stat" == "0" ]]; then
 else
   echo "Output does not match: " $stat
 fi
-

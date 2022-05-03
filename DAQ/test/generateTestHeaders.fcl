@@ -1,6 +1,6 @@
 # Create a file with test run/subrun/event headers
 #
-# Usage: mu2e -c Offline/DAQ/test/generateTestHeaders.fcl 
+# Usage: mu2e -c Offline/DAQ/test/generateTestHeaders.fcl
 #
 # Contact person Rob Kutschke
 
@@ -27,8 +27,8 @@ physics : {
   producers : {
      generateHeaders :  { module_type : HeaderTestProducer }
   }
-  
-  t1 : [ generateHeaders  ] 
+
+  t1 : [ generateHeaders  ]
   e1 : [ output ]
 
   trigger_paths  : [t1]
