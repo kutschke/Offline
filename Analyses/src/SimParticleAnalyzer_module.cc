@@ -154,7 +154,7 @@ namespace mu2e {
       nt[27] = simP.endMomentum().x();
       nt[28] = simP.endMomentum().y();
       nt[29] = simP.endMomentum().z();
-      nt[30] = simP.endKineticEnergy();
+      nt[30] = -1.;
       nt[31] = simP.nSteps();
 
       _ntpssp->Fill(nt);

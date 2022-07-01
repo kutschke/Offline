@@ -72,7 +72,6 @@ namespace mu2e {
       _endG4Status(),
       _stoppingCode(),
       _preLastStepKE(-1.),
-      _endKE(-1.),
       _nSteps(0),
       _trackLength(-1.),
       _daughterSims(){
@@ -113,7 +112,6 @@ namespace mu2e {
       _endG4Status(),
       _stoppingCode(),
       _preLastStepKE(-1),
-      _endKE(-1),
       _nSteps(0),
       _trackLength(-1.),
       _daughterSims()
@@ -128,7 +126,6 @@ namespace mu2e {
                      unsigned                aendVolumeIndex,
                      unsigned                aendG4Status,
                      ProcessCode             astoppingCode,
-                     float                   endKE,
                      int                     nSteps,
                      float                  trackLength){
       _endPosition     = aendPosition;
@@ -139,7 +136,6 @@ namespace mu2e {
       _endG4Status     = aendG4Status;
       _stoppingCode    = astoppingCode;
       _preLastStepKE   = -1.0;
-      _endKE           = endKE;
       _nSteps          = nSteps;
       _trackLength     = trackLength;
     }
@@ -217,7 +213,6 @@ namespace mu2e {
     unsigned     endG4Status()    const { return _endG4Status;   }
     ProcessCode  stoppingCode()   const { return _stoppingCode;  }
     float preLastStepKineticEnergy() const { return _preLastStepKE; }
-    float        endKineticEnergy() const { return _endKE; }
     int          nSteps()         const { return _nSteps;        }
     float       trackLength()    const { return _trackLength;   }
 
@@ -288,7 +283,6 @@ namespace mu2e {
     unsigned                _endG4Status;
     ProcessCode             _stoppingCode;
     float                    _preLastStepKE;
-    float                   _endKE;
     int                     _nSteps;
     float                   _trackLength;
 

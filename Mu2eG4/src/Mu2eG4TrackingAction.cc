@@ -680,7 +680,6 @@ namespace mu2e {
 
 
     //Get kinematics just before annihilation
-    double endKE = Mu2eG4UserHelpers::getEndKE(trk);
     CLHEP::HepLorentzVector endMomentum =  Mu2eG4UserHelpers::getEndMomentum(trk);
 
     //Get number od steps the track is made of
@@ -694,7 +693,6 @@ namespace mu2e {
                           _physVolHelper->index(trk),
                           trk->GetTrackStatus(),
                           stoppingCode,
-                          endKE,
                           nSteps,
                           trk->GetTrackLength()
                           );

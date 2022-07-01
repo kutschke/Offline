@@ -86,7 +86,7 @@ int mu2e::ValSimParticle::fill(const mu2e::SimParticleCollection& coll,
     double pstart = part.startMomentum().vect().mag();
     int idc = _id.fill(part.pdgId());  // this "rewrites" pdgId
     double p = part.startMomentum().vect().mag();
-    double endKE = part.endKineticEnergy();
+    double endKE = -1.;
     _hp->Fill(p);
     _hendKE->Fill(endKE);
     if (abs(idc) == 11) {

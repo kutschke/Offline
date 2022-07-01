@@ -491,7 +491,6 @@ namespace mu2e {
                        ,oldParent.endVolumeIndex()       // same
                        ,1                                // G4 status for where pbar ends
                        ,ProcessCode::mu2eProtonInelastic // same process code
-                       ,momPbar.e()- _mass               // preLastStepKE
                        ,0                                // nSteps
                        ,-1.                              // track length
                        );

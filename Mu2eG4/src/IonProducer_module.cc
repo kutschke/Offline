@@ -125,7 +125,6 @@ namespace mu2e {
                   0, // volume index
                   1, // G4 status
                   ProcessCode::mu2ePrimary,
-                  fourmom.e() - mass, // preLastStepKE
                   0, // nsteps
                   0. // track length
                   );
